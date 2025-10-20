@@ -1,14 +1,4 @@
----
-SIG: ORC Attestation SIG
-Document Type: Deliverable
-Number: XX
-Status: Drafting
-Group: European Commission
-Date: XX
----
-
 # Contemplating Mechanisms for Article 25 in Support of Open Source Stewards
-
 
 ## Introduction
 
@@ -36,7 +26,7 @@ completeness.
 1. cooperat[ing] with the market surveillance authorities
 1. notif[ying of] any severe incident ... that it becomes aware of
    simultaneously to the CSIRT ... and to ENISA.
-1. After becoming aware of an actively exploited vulnerability or a severe
+1. after becoming aware of an actively exploited vulnerability or a severe
    incident ... inform[ing] the impacted users ... of that vulnerability or
    incident and, where necessary, of any risk mitigation and corrective
    measures
