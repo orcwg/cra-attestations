@@ -52,4 +52,5 @@ Anyone who contributes to this projects output, whether via git contributions, d
 
 **Contributors:**
 1. Æva Black
+2. Elizabeth Mattijsen
 1. ...
