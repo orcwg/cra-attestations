@@ -66,7 +66,8 @@ Date: 2025-10-21
 
 ### Contribution guidelines \- how to make a proposal
 
-- Open a Pull Request and submit your proposals and contributions \- contact either Æva or Juan in case of problems.
+- Open a Pull Request and submit your proposals and contributions 
+  - contact either Æva or Juan in case of problems.
 
 ### CRA Attestation workshop @ Code & Compliance
 
