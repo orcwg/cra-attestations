@@ -76,7 +76,9 @@ Date: 2025-10-21
   - Stewards  
   - Independent projects  
 - Art. 25 clarifies the entities that are enabled to develop attestations.  
-- How to transition from an independent open source project to a steward \- it won’t be covered during the workshop, but this is an important aspect that should be considered.  
+- We may want to develop guidance on how to transition from an independent open source project to a stewarded project
+  - it won’t be covered during the workshop, but this is an important aspect that should be considered
+  - would be a useful contribution to public guidance for open source communities
 - Feedback about the challenges:  
   - We’ll organize by the beginning of the day the challenges to make sure that we have enough people contributing to them.  
 - We’ll open a space to have discussions about what could be included  
