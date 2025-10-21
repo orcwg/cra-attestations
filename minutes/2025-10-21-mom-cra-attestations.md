@@ -61,7 +61,9 @@ Date: 2025-10-21
 - Set of guidelines target different scenarios that could end up as recommendations that can be shared later next year (6-7 months).  
 - The plan is to use this workstream to draft the recommendations to the European Commission.  
 - We’ll figure out how to contribute to a potential delegated act on the topic.  
-- In later stages, we should develop kind of checklist, it will keep it in mind and revisit it in later stages of the work. Idea proposed \- Use the checklist to build an independent  ISO, etc submission \- or fed into ETSI via an IETF ID-\> RFC stream \-  
+- In later stages, we should develop kind of checklist, it will keep it in mind and revisit it in later stages of the work. Idea proposed 
+  - Use the checklist to build an independent  ISO, etc submission 
+  - or fed into ETSI via an IETF ID->RFC stream  
 - For those who have materials, please open a PR to submit them
 
 ### Contribution guidelines \- how to make a proposal
