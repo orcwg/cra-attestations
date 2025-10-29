@@ -1,1 +1,1 @@
-Pictures from the event - discussions
+Pictures from the event's breakout groups are captured here.
