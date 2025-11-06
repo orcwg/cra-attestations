@@ -24,7 +24,7 @@ Our current goal is to create a mature proposal by Q2 of 2026.
 ## Organization
 
 * **Project Lead**: Æva Black
-* **Meeting Times**: Every Other Tuesday @ 1600 CEST / 1400 UTC
+* **Meeting Times**: Every Other Tuesday @ 1600 CET / 1400 UTC
 * **Mailing List**: we're using the ORC mailing list for now
 * **Matrix Room**: https://matrix.to/#/#oss-attestations:fosdem.org
 
