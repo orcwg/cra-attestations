@@ -145,5 +145,5 @@ Certain Projects will fall in a gap of CRA:
 * **Tiered Requirements:** Attestation should have different levels and requirements, with lower requirements for first-party assessments or non-critical open-source projects.
 
 
-![Outcomes of the third party attestations team displayed in the board](../pictures/5-third--party-attestations.jpg "thisrd party attestations Outcomes")
+![Outcomes of the third party attestations team displayed in the board](../pictures/5-third-party-attestations.jpg "third party attestations Outcomes")
 
