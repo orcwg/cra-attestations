@@ -28,7 +28,7 @@ Authorship
 - [ ] AU.02: State your name and role in the organization: 
       Primary Contact:        _________________________________________
       Organizational Role:    _________________________________________
-- [ ] AU.02: List all project(s) to which the attestation applies:
+- [ ] AU.03: List all project(s) to which the attestation applies:
       Project Name:           _________________________________________
       Project URL:            _________________________________________
       Valid For Version(s):   _________________________________________
@@ -39,6 +39,9 @@ Governance
       Documentation Link:     _________________________________________
 - [ ] GV.02: The Project's contribution guideline should set a 
       quality standard for contributions. Check this box to confirm.
+- [ ] GV.03: The Project must include documentation about its usage and
+      intended purpose or functionality.
+      Documentaiton Link:     __________________________________________
 
 Licensing
 - [ ] LE.01: All Project components, including binaries and documentation, 
@@ -50,15 +53,15 @@ Licensing
       If this is not true, please explain: ____________________________
 
 Quality 
-- [ ] QA.01: The Project must document, or otherwise include a list of, all
-      direct third-party dependencies. 
+- [ ] QA.01: The Project must document, or otherwise include a list of,
+      all direct third-party dependencies. 
       Link to SBOM(s):        _________________________________________
 - [ ] QA.02: The Project's source code, including change history, must be
       publicly available. 
       Link to source control: _________________________________________
 - [ ] QA.03: The Project must include documentation describing how to file a
       vulnerability report.
-      Link to vuln reporting guide:  __________________________________
+      Link to reporting guide:  _______________________________________
 - [ ] QA.04: The Project must include repeatable test procedures. 
       These may be automated in a CI/CD pipeline, but do not need to be. 
       Link to test procedure documentation: ___________________________
@@ -71,7 +74,7 @@ Quality
       box to confirm that this is true.
 - [ ] QA.07: Projects that have more than one active contributor should require
       change review.  Check this box to confirm that all changes are reviewed by at
-      least one non-author.
+      least one human non-author.
 
 Build and Release
 - [ ] BR.01: The Project must document how to build it from source code.
@@ -92,7 +95,7 @@ Vulnerability Management
 - [ ] VM.01: The Project must indicate at least one security contact for
       reporting vulnerabilities.
       Reporting contact information: __________________________________
-      If there is a way to do that privately,
+      If there is a way to report vulnerabilities privately and securely,
       provide a link to the instructions here: ________________________
 - [ ] VM.02: The Project must publish information about discovered
       vulnerabilities within a reasonable period of time, including mitigation
