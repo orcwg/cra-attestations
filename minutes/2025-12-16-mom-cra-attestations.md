@@ -13,7 +13,7 @@ Date: 2025-12-16
 | 0 | Welcome & approve agenda |
 | 5 | Approval of the minutes from the previous meeting [here](https://github.com/orcwg/cra-attestations/blob/main/minutes/2025-12-02-mom-cra-attestations.md) |
 | 10 | Status of the [action items from the previous meeting](#action-points-from-the-previous-meeting) |
-| 15 | First draft of a 2-tier proposal discussion |
+| 15 | 2-tier proposal discussion |
 | 20 |  |
 | 25 |  |
 | 30 |  |
