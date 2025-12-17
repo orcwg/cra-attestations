@@ -1,7 +1,7 @@
 ---
 Task force: CRA Attestations
 Document type: Minutes
-Status: ⚠️ Draft
+Status: ✅ Approved
 Date: 2025-12-02
 ---
 
