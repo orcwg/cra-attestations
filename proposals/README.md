@@ -17,4 +17,4 @@ As proposals come in, we will coordinate group discussions and compile an analys
 
 | Your Name | File Name | Version | Status | Description | Comment Summary |
 | --------- | --------- | ------- | ------ | ----------- | --------------- |
-| Æva | example-entry.md | 1.0 | unreviewed | using omnibor-based artifact dependency graphs simplifies vulnerability response coordination and therefore benefits both FOSS communities and manufacturers | - |
+| Æva | gen-two-tier-approach.md | 0.2 | in review by group | Turning Code&Compliance discussions into a generalizable two-tier attestation proposal, based on the latest publication from the BSI | - |
