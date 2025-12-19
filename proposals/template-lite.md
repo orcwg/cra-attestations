@@ -54,8 +54,9 @@ Licensing
 
 Quality 
 - [ ] QA.01: The Project must document, or otherwise include a list of,
-      all direct third-party dependencies. 
-      Link to SBOM(s):        _________________________________________
+      all direct third-party dependencies. This list should include
+      cryptographically unique identifiers (checksums) where applicable.
+      Link to SBOM or lockfile: _______________________________________
 - [ ] QA.02: The Project's source code, including change history, must be
       publicly available. 
       Link to source control: _________________________________________
@@ -99,8 +100,8 @@ Vulnerability Management
       provide a link to the instructions here: ________________________
 - [ ] VM.02: The Project must publish information about discovered
       vulnerabilities within a reasonable period of time, including mitigation
-      instructions if available.  Check this box to confirm that there is a policy
-      in place to affect this.
+      instructions if available.  Check this box to confirm that there is such
+      a policy in place.
 
 End-of-Life
 - [ ] EL.01: The discontinuation of support for the Project, parts of it, 

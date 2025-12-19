@@ -1,5 +1,20 @@
 # A Generalizable Two-Tier Voluntary Security Attestation Guideline
 
+_**Status of this document**_
+
+**This is a draft document and may be updated, replaced or obsoleted at any
+time. It is inappropriate to cite this document as other than a work in
+progress. Publication of this document as a draft does not imply endorsement
+by the Eclipse Foundation, Open Regulatory Working Group Members, or
+contributors.**
+
+# Revision History
+
+| Revision | Date       | Summary of Changes                          |
+| -------- | ---------- | ------------------------------------------- |
+| 0.2      | 19.12.2025 | Integrated feedback from ORC WG and GH discussions             |
+| 0.1      | 18.11.2025 | Initial proposal by Æva Black to the ORC WG |
+
 ## Editor's Notes
 
 - We have adopted "VSA" as an acronym for "voluntary security attestation"
@@ -7,15 +22,11 @@
   commonplace in our industry today (e.g., Remote Attestation, Hardware
   based Attestations, and RSAA-compliance Attestations in U.S. Federal
   procurement).
-- _**TODO:**_ add a definition/citation for "Project."
+
+- _**TODO:**_ remove "VSA" acronym usage, relegating the disambiguation to
+  an annex, and replace the acronym with an approachable term.
 - _**TODO:**_ complete various TODO's throughout this draft.
-
-## Edit History
-
-| Revision | Date       | Summary of Changes                          |
-| -------- | ---------- | ------------------------------------------- |
-| 0.2      | 15.12.2025 | Integrated feedback from ORC WG and GH discussions             |
-| 0.1      | 18.11.2025 | Initial proposal by Æva Black to the ORC WG |
+- _**TODO:**_ add citations to explanatory and supportive information (guides, FAQs, etc) in an appendix, and link throughout this proposal.
 
 # Introduction
 
@@ -97,14 +108,14 @@
 
 ## Regarding Non-Stewarded Projects
 
-1. Considering that a steward who fulfills its Article 24 obligations and issues
-   VSAs will provide market actors -- CSIRTs, MSAs, and Manufacturers, and
-   cybersecurity researchers -- with a trustworthy coordination point for a scoped set of open source projects;
-1. Considering that an open source project which has neither manufacturer nor
-   steward has no _legal_ entity capable of claiming to fulfill said obligations
-   (for if it did, that entity would be its steward or its manufacturer);
-1. Considering that many open source projects today would not be
-   considered stewarded and none the less provide significant economic and
+1. Considering that a steward who both fulfills the Article 24 obligations and
+   issues VSAs will provide market actors -- CSIRTs, MSAs, and Manufacturers,
+   and cybersecurity researchers -- with a trustworthy coordination point for a
+   scoped set of open source projects;
+1. Considering that many open source projects do not currently have this support
+   from a _legal entity_ that could be deemed either its manufacturer or
+   steward;
+1. Considering that such projects none the less provide significant economic and
    societal value;
 1. Considering that VSAs could enable new business models and revenue
    streams while protecting the non-manufacturer status of non-stewarded projects, building on the strengths of open source, and providing market actors -- CSIRTs, MSAs, and Manufacturers, and cybersecurity researchers -- with a known coordination point for open source projects.
@@ -186,20 +197,23 @@ maintainers.
 
 **[ FIXME: integrate more recommendations from other sections into this one ]**
 
-## Recommendations for Project Maintainers
+## Recommendations for Maintainers of Projects Used in Products
 
-1. Maintainers should produce, or enable the production of, VSAs for projects
-   they are responsible for.
-1. Maintainers may wish to explore options to associate with a steward, or with
+1. Maintainers may wish to produce VSAs for projects they are responsible for.
+1. Maintainers may wish to explore options to associate with a steward or
    a fiscal host that can act as an intermediary.
+1. Maintainers may wish to make publicly available the necessary artifacts to
+   enable the automated creation of third-party attestations for their projects.
 
 ## Recommendations for Stewards
 
 1. Due to the obligations of stewards described in CRA Article 24, and their
    relationship to specific open source projects, stewards should produce VSAs
-   only for projects to which they offer "sustained and ongoing support."
+   for projects to which they offer "sustained and ongoing support."
 1. Stewards should support tasks associated with producing VSAs that maintainers
    do not wish to perform.
+1. Stewards who produce VSAs for second-party projects (i.e., those their
+   projects depend on) should indicate the nature of the relaionship.
 
 ## Recommendations for both Maintainers and Stewards
 
