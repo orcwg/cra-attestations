@@ -7,6 +7,7 @@ Edit History
 
 | Revision | Date | Summary of Changes |
 | --- | ---------- | --- |
+| 0.2 | 22.12.2025 | Update language to avoid non-standardizable "must" |
 | 0.1 | 18.11.2025 | Initial proposal by Æva Black to the ORC WG |
 
 Introduction
