@@ -6,6 +6,7 @@ Edit History
 
 | Revision | Date | Summary of Changes |
 | --- | ---------- | --- |
+| 0.3 | 06.01.2026 | Added tiered evidence model (low/medium/high risk) per COM guidance |
 | 0.2 | 22.12.2025 | Moved annexes and appendices to implementation guide |
 | 0.1 | 22.12.2025 | Initial draft based on two-tier approach and EN 304 617 derivative browser model |
 
@@ -149,96 +150,152 @@ Other Certifications:   _________________________________________
 
 ## Section 3: Requirement Coverage
 
-### 3.1 Coverage Declaration
+### 3.1 Evidence Tiers
+
+Requirements are assessed according to a tiered evidence model based on risk level:
+
+| Risk Level | Evidence Required | Description |
+|------------|-------------------|-------------|
+| **Low** | Declaration | Checkmark confirming the requirement has been met |
+| **Medium** | Test Reference | Reference to tests that validate the requirement |
+| **High** | Evidence | Demonstration of evidence or execution of tests |
+
+The risk level for each requirement should be determined based on the security impact and the context of the downstream integration. See the [Implementation Guide](template-heavy-implementation-guide.md) for guidance on risk classification.
+
+### 3.2 Coverage Declaration
 
 For each CRA requirement addressed by this attestation, the following information is provided:
 
-| Requirement Reference | Implementation Description | Configuration Prerequisites | Known Limitations |
-|-----------------------|---------------------------|----------------------------|-------------------|
-| _example: Annex I Part I.2(b)_ | _Secure defaults are enforced via..._ | _None_ | _Does not apply to..._ |
+| Requirement Reference | Risk Level | Implementation Description | Evidence/Test Reference | Known Limitations |
+|-----------------------|------------|---------------------------|------------------------|-------------------|
+| _example: Annex I Part I.2(b)_ | _Medium_ | _Secure defaults are enforced via..._ | _Link to test suite_ | _Does not apply to..._ |
 
-### 3.2 Annex I Part I Coverage
+### 3.3 Annex I Part I Coverage
 
-_For each applicable requirement, describe how the project addresses the security concern._
+_For each applicable requirement, describe how the project addresses the security concern. Indicate the risk level and provide evidence appropriate to that level._
 
-#### 3.2.1 Risk Assessment (Annex I Part I.1)
+#### 3.3.1 Risk Assessment (Annex I Part I.1)
 
 ```
 - [ ] RI.01: The project maintains a cybersecurity risk assessment.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       Risk Assessment URL:  _________________________________________
       Last Updated:         _________________________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 ```
 
-#### 3.2.2 Security Properties (Annex I Part I.2)
+#### 3.3.2 Security Properties (Annex I Part I.2)
 
 ```
 - [ ] SP.01: (a) The project is designed to be placed on the market without
       known exploitable vulnerabilities.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       Vulnerability Tracking URL: ____________________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 
 - [ ] SP.02: (b) The project provides secure by default configuration.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       Secure Defaults Documentation: _________________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 
 - [ ] SP.03: (c) The project supports security updates.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       Update Mechanism Documentation: ________________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 
 - [ ] SP.04: (d) The project enforces appropriate access controls.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       Access Control Documentation: __________________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 
 - [ ] SP.05: (e) The project protects data confidentiality.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       Confidentiality Documentation: _________________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 
 - [ ] SP.06: (f) The project protects data and program integrity.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       Integrity Documentation: _______________________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 
 - [ ] SP.07: (g) The project minimizes data processing.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       Data Minimisation Documentation: _______________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 
 - [ ] SP.08: (h) The project protects availability.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       Availability Documentation: ____________________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 
 - [ ] SP.09: (i) The project minimizes negative impact on other products.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       Impact Minimisation Documentation: _____________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 
 - [ ] SP.10: (j) The project limits attack surfaces.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       Attack Surface Documentation: __________________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 
 - [ ] SP.11: (k) The project includes exploit mitigation techniques.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       Mitigation Documentation: ______________________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 
 - [ ] SP.12: (l) The project supports security monitoring.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       Monitoring Documentation: ______________________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 
 - [ ] SP.13: (m) The project supports secure data deletion.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       Deletion Documentation: ________________________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 ```
 
-#### 3.2.3 Vulnerability Handling Requirements (Annex I Part II)
+#### 3.3.3 Vulnerability Handling Requirements (Annex I Part II)
 
 ```
 - [ ] VH.01: (1) The project provides SBOM documentation.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       SBOM URL:             _________________________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 
 - [ ] VH.02: (2) Vulnerabilities are addressed and remediated.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       Remediation Policy URL: ________________________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 
 - [ ] VH.03: (3) Testing procedures validate security properties.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       Testing Documentation: _________________________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 
 - [ ] VH.04: (4) Vulnerability information is disclosed appropriately.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       Disclosure Policy URL: _________________________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 
 - [ ] VH.05: (5) The project has a CVD policy.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       CVD Policy URL:       _________________________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 
 - [ ] VH.06: (6) Vulnerability information is shared effectively.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       Information Sharing URL: _______________________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 
 - [ ] VH.07: (7) Updates are distributed securely.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       Distribution Documentation: ____________________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 
 - [ ] VH.08: (8) Security updates are provided in a timely manner.
+      Risk Level:           [ ] Low  [ ] Medium  [ ] High
       Update Timeline Policy: ________________________________________
+      Evidence/Test Reference (if Medium/High): ______________________
 ```
 
 ---

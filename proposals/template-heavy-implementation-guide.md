@@ -6,6 +6,7 @@ Edit History
 
 | Revision | Date | Summary of Changes |
 | --- | ---------- | --- |
+| 0.2 | 06.01.2026 | Added Annex G: Tiered Evidence Model per COM guidance |
 | 0.1 | 22.12.2025 | Initial draft, extracted from template-heavy.md |
 
 Introduction
@@ -19,7 +20,8 @@ This guide provides supporting material for implementing heavy-weight Voluntary 
 4. Update flow procedures
 5. Machine-readable format specification
 6. Guidance for conformity assessment bodies
-7. CRA requirement mappings
+7. Tiered evidence model (low/medium/high risk)
+8. CRA requirement mappings
 
 This document accompanies the [Heavy Weight VSA Template](template-heavy.md).
 
@@ -455,7 +457,7 @@ Heavy-weight VSAs should be published in JSON format conforming to the following
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["requirement_ref", "description"],
+        "required": ["requirement_ref", "description", "risk_level"],
         "properties": {
           "requirement_ref": {
             "type": "string",
@@ -465,9 +467,44 @@ Heavy-weight VSAs should be published in JSON format conforming to the following
             "type": "string",
             "description": "How the project addresses the security concern"
           },
+          "risk_level": {
+            "type": "string",
+            "enum": ["low", "medium", "high"],
+            "description": "Risk level determining evidence requirements per Annex G"
+          },
           "documentation_url": {
             "type": "string",
             "format": "uri"
+          },
+          "test_reference": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to tests validating the requirement (required for medium/high risk)"
+          },
+          "evidence": {
+            "type": "object",
+            "description": "Evidence demonstrating compliance (required for high risk)",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["test_results", "audit_report", "pentest_report", "formal_verification", "historical_data", "certification", "other"],
+                "description": "Type of evidence provided"
+              },
+              "description": {
+                "type": "string",
+                "description": "Description of the evidence"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "URL to the evidence"
+              },
+              "date": {
+                "type": "string",
+                "format": "date",
+                "description": "Date evidence was generated"
+              }
+            }
           },
           "classification": {
             "type": "string",
@@ -538,6 +575,143 @@ When updating a VSA:
 2. Update version range to cover new releases
 3. Maintain prior versions at accessible URLs
 4. Publish update notification through documented channels
+
+---
+
+# Annex G: Tiered Evidence Model
+
+## G.1 Purpose
+
+This annex defines the tiered evidence model for attestation review, based on guidance from the European Commission regarding the level of detail required for downstream presumption of conformity.
+
+## G.2 Evidence Tiers
+
+Requirements are assessed according to three evidence tiers based on risk level:
+
+| Risk Level | Evidence Required | Description |
+|------------|-------------------|-------------|
+| **Low** | Declaration | A checkmark confirming the requirement has been met is sufficient |
+| **Medium** | Test Reference | Reference to tests that have been written to validate the requirement |
+| **High** | Evidence | Demonstration of evidence or execution of tests showing the requirement is met |
+
+## G.3 Risk Level Determination
+
+### G.3.1 Factors for Risk Classification
+
+The risk level for each requirement should be determined based on:
+
+1. **Security impact**: What is the potential harm if the requirement is not met?
+2. **Attack surface**: Is the functionality exposed to untrusted input or network access?
+3. **Data sensitivity**: Does the requirement protect sensitive or personal data?
+4. **Downstream context**: How is the project typically integrated?
+5. **Product category**: Is the downstream product Important Class I, Class II, or default category?
+
+### G.3.2 General Risk Classification Guidance
+
+**Low Risk** - Declaration sufficient:
+- Requirements with limited security impact
+- Functionality not directly exposed to attack
+- Administrative or process-oriented requirements
+- Examples: documentation availability, governance structure, contribution guidelines
+
+**Medium Risk** - Test reference required:
+- Requirements with moderate security impact
+- Functionality that could be exploited but with limited consequence
+- Requirements where testing provides adequate assurance
+- Examples: input validation, error handling, logging mechanisms, SBOM accuracy
+
+**High Risk** - Evidence required:
+- Requirements with significant security impact
+- Functionality directly protecting against common attack vectors
+- Cryptographic implementations
+- Requirements where failure could lead to data breach or system compromise
+- Examples: authentication mechanisms, cryptographic operations, certificate validation, sandbox enforcement, vulnerability remediation timelines
+
+### G.3.3 Product Category Considerations
+
+The downstream product category may influence risk classification:
+
+| Product Category | Risk Adjustment |
+|------------------|-----------------|
+| Default (non-Important) | Standard risk levels as determined by G.3.2 |
+| Important Class I | Consider elevating Medium risks to High |
+| Important Class II | Elevate most requirements to High; comprehensive evidence expected |
+
+## G.4 Evidence Requirements by Tier
+
+### G.4.1 Low Risk - Declaration
+
+For low-risk requirements, the attestation publisher provides:
+
+- A checkbox indicating the requirement is met
+- Optional: URL to supporting documentation
+
+The downstream manufacturer may rely on the declaration without additional verification beyond due diligence on the project itself.
+
+### G.4.2 Medium Risk - Test Reference
+
+For medium-risk requirements, the attestation publisher provides:
+
+- A checkbox indicating the requirement is met
+- Reference to test suite or specific tests that validate the requirement
+- Test location (URL to test files, CI pipeline, or test documentation)
+- Optional: Test coverage metrics
+
+The downstream manufacturer should:
+- Verify tests exist at the referenced location
+- Confirm tests are executed as part of the project's CI/CD
+- Document reliance on upstream testing
+
+### G.4.3 High Risk - Evidence
+
+For high-risk requirements, the attestation publisher provides:
+
+- A checkbox indicating the requirement is met
+- Detailed description of how the requirement is satisfied
+- Evidence demonstrating compliance, which may include:
+  - Test results or reports
+  - Security audit findings
+  - Penetration test results
+  - Formal verification outputs
+  - Historical vulnerability data
+  - Third-party certifications
+
+The downstream manufacturer should:
+- Review the provided evidence
+- Verify evidence is current and applicable to the integrated version
+- Document the evidence review in technical documentation
+- Consider independent verification for critical integrations
+
+## G.5 Relationship to Inheritance Classification
+
+The evidence tier (risk level) is orthogonal to the inheritance classification:
+
+| | Inheritable | Conditional | Direct-Assessment |
+|---|-------------|-------------|-------------------|
+| **Low Risk** | Declaration in VSA | Declaration in VSA | Declaration by manufacturer |
+| **Medium Risk** | Test reference in VSA | Test reference in VSA | Test reference by manufacturer |
+| **High Risk** | Evidence in VSA | Evidence in VSA | Evidence by manufacturer |
+
+For inherited requirements, the VSA provides the evidence. For direct-assessment requirements, the manufacturer provides the evidence regardless of what the VSA states.
+
+## G.6 Documentation in VSA
+
+When completing a heavy-weight VSA, for each requirement:
+
+1. Determine the appropriate risk level using G.3
+2. Provide evidence appropriate to the tier per G.4
+3. Document the risk level in the attestation
+4. Include references to tests or evidence as required
+
+## G.7 CAB Verification
+
+Conformity Assessment Bodies should verify:
+
+1. Risk levels are appropriately assigned based on G.3
+2. Evidence provided matches the required tier per G.4
+3. For medium-risk requirements, tests exist and are executed
+4. For high-risk requirements, evidence is substantive and current
+5. Downstream manufacturers have documented their review of evidence
 
 ---
 
@@ -620,30 +794,31 @@ This appendix maps CRA requirements to heavy-weight VSA template sections.
 
 | CRA Requirement | Template Section | Notes |
 |-----------------|------------------|-------|
-| Annex I Part I.1 | Section 3.2.1 (RI.01) | Risk assessment |
-| Annex I Part I.2(a) | Section 3.2.2 (SP.01) | No known exploitable vulnerabilities |
-| Annex I Part I.2(b) | Section 3.2.2 (SP.02) | Secure by default |
-| Annex I Part I.2(c) | Section 3.2.2 (SP.03) | Security updates |
-| Annex I Part I.2(d) | Section 3.2.2 (SP.04) | Access controls |
-| Annex I Part I.2(e) | Section 3.2.2 (SP.05) | Confidentiality |
-| Annex I Part I.2(f) | Section 3.2.2 (SP.06) | Integrity |
-| Annex I Part I.2(g) | Section 3.2.2 (SP.07) | Data minimisation |
-| Annex I Part I.2(h) | Section 3.2.2 (SP.08) | Availability |
-| Annex I Part I.2(i) | Section 3.2.2 (SP.09) | Impact minimisation |
-| Annex I Part I.2(j) | Section 3.2.2 (SP.10) | Attack surface |
-| Annex I Part I.2(k) | Section 3.2.2 (SP.11) | Exploit mitigation |
-| Annex I Part I.2(l) | Section 3.2.2 (SP.12) | Security monitoring |
-| Annex I Part I.2(m) | Section 3.2.2 (SP.13) | Secure deletion |
-| Annex I Part II.1 | Section 3.2.3 (VH.01) | SBOM |
-| Annex I Part II.2 | Section 3.2.3 (VH.02) | Vulnerability remediation |
-| Annex I Part II.3 | Section 3.2.3 (VH.03) | Testing |
-| Annex I Part II.4 | Section 3.2.3 (VH.04) | Vulnerability disclosure |
-| Annex I Part II.5 | Section 3.2.3 (VH.05) | CVD policy |
-| Annex I Part II.6 | Section 3.2.3 (VH.06) | Information sharing |
-| Annex I Part II.7 | Section 3.2.3 (VH.07) | Secure distribution |
-| Annex I Part II.8 | Section 3.2.3 (VH.08) | Timely updates |
+| Annex I Part I.1 | Section 3.3.1 (RI.01) | Risk assessment |
+| Annex I Part I.2(a) | Section 3.3.2 (SP.01) | No known exploitable vulnerabilities |
+| Annex I Part I.2(b) | Section 3.3.2 (SP.02) | Secure by default |
+| Annex I Part I.2(c) | Section 3.3.2 (SP.03) | Security updates |
+| Annex I Part I.2(d) | Section 3.3.2 (SP.04) | Access controls |
+| Annex I Part I.2(e) | Section 3.3.2 (SP.05) | Confidentiality |
+| Annex I Part I.2(f) | Section 3.3.2 (SP.06) | Integrity |
+| Annex I Part I.2(g) | Section 3.3.2 (SP.07) | Data minimisation |
+| Annex I Part I.2(h) | Section 3.3.2 (SP.08) | Availability |
+| Annex I Part I.2(i) | Section 3.3.2 (SP.09) | Impact minimisation |
+| Annex I Part I.2(j) | Section 3.3.2 (SP.10) | Attack surface |
+| Annex I Part I.2(k) | Section 3.3.2 (SP.11) | Exploit mitigation |
+| Annex I Part I.2(l) | Section 3.3.2 (SP.12) | Security monitoring |
+| Annex I Part I.2(m) | Section 3.3.2 (SP.13) | Secure deletion |
+| Annex I Part II.1 | Section 3.3.3 (VH.01) | SBOM |
+| Annex I Part II.2 | Section 3.3.3 (VH.02) | Vulnerability remediation |
+| Annex I Part II.3 | Section 3.3.3 (VH.03) | Testing |
+| Annex I Part II.4 | Section 3.3.3 (VH.04) | Vulnerability disclosure |
+| Annex I Part II.5 | Section 3.3.3 (VH.05) | CVD policy |
+| Annex I Part II.6 | Section 3.3.3 (VH.06) | Information sharing |
+| Annex I Part II.7 | Section 3.3.3 (VH.07) | Secure distribution |
+| Annex I Part II.8 | Section 3.3.3 (VH.08) | Timely updates |
 | Article 13.5 | Annex B | Due diligence guidance |
 | Article 24 | Section 1.3 (Steward identification) | Steward obligations |
+| — | Section 3.1 / Annex G | Tiered evidence model (low/medium/high risk) |
 
 ---
 
