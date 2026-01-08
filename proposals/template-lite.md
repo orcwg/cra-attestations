@@ -7,6 +7,7 @@ Edit History
 
 | Revision | Date | Summary of Changes |
 | --- | ---------- | --- |
+| 0.2 | 22.12.2025 | Update language to avoid non-standardizable "must" |
 | 0.1 | 18.11.2025 | Initial proposal by Æva Black to the ORC WG |
 
 Introduction
@@ -35,17 +36,17 @@ Authorship
       Valid For Date(s):      _________________________________________
 
 Governance
-- [ ] GV.01: The Project must include a contribution guideline. 
+- [ ] GV.01: The Project shall include a contribution guideline. 
       Documentation Link:     _________________________________________
 - [ ] GV.02: The Project's contribution guideline should set a 
       quality standard for contributions. Check this box to confirm.
-- [ ] GV.03: The Project must include documentation about its usage and
+- [ ] GV.03: The Project shall include documentation about its usage and
       intended purpose or functionality.
       Documentaiton Link:     __________________________________________
 
 Licensing
 - [ ] LE.01: All Project components, including binaries and documentation, 
-      must be publicly available under an open source license.
+      shall be publicly available under an open source license.
       License File Link:      _________________________________________
 - [ ] LE.02: The Project's dependencies, including requirements for 
       reproducing the project's distributed binaries, should available under 
@@ -53,21 +54,21 @@ Licensing
       If this is not true, please explain: ____________________________
 
 Quality 
-- [ ] QA.01: The Project must document, or otherwise include a list of,
+- [ ] QA.01: The Project shall document, or otherwise include a list of,
       all direct third-party dependencies. This list should include
       cryptographically unique identifiers (checksums) where applicable.
       Link to SBOM or lockfile: _______________________________________
-- [ ] QA.02: The Project's source code, including change history, must be
+- [ ] QA.02: The Project's source code, including change history, shall be
       publicly available. 
       Link to source control: _________________________________________
-- [ ] QA.03: The Project must include documentation describing how to file a
+- [ ] QA.03: The Project shall include documentation describing how to file a
       vulnerability report.
       Link to reporting guide:  _______________________________________
-- [ ] QA.04: The Project must include repeatable test procedures. 
+- [ ] QA.04: The Project shall include repeatable test procedures. 
       These may be automated in a CI/CD pipeline, but do not need to be. 
       Link to test procedure documentation: ___________________________
 - [ ] QA.05: If the project relies on code written in non-memory-safe languages, 
-      the Project must include mitigations for memory safety vulnerabilities.  This
+      the Project shall include mitigations for memory safety vulnerabilities.  This
       may include, for example, minimum contribution guidelines or automated tests to
       verify that changes do not introduce common types of memory safety errors.
       Check this box if there are mitigations for memory safety vulnerabilities.
@@ -78,27 +79,27 @@ Quality
       least one human non-author.
 
 Build and Release
-- [ ] BR.01: The Project must document how to build it from source code.
+- [ ] BR.01: The Project shall document how to build it from source code.
       Link to build documentation here: _______________________________
-- [ ] BR.02: All Project releases intended for use must be assigned unique and 
+- [ ] BR.02: All Project releases intended for use shall be assigned unique and 
       monotonically increasing version identifiers. 
       Check this box to confirm that this is true. 
       Link to release documentation or history: _______________________
-- [ ] BR.03: All released assets must be distributed in a way that maintains
+- [ ] BR.03: All released assets shall be distributed in a way that maintains
       integrity, or at a minimum allows the verification thereof, and the means to
-      verify this must be documented. Check this box to confirm that this is true.
+      verify this shall be documented. Check this box to confirm that this is true.
       Link to integrity verification instructions: ____________________
-- [ ] BR.04: All releases must include a descriptive log of functional and
+- [ ] BR.04: All releases shall include a descriptive log of functional and
       security changes.  Check this box to confirm that this is true.
       Link to release documentation or history: _______________________
 
 Vulnerability Management
-- [ ] VM.01: The Project must indicate at least one security contact for
+- [ ] VM.01: The Project shall indicate at least one security contact for
       reporting vulnerabilities.
       Reporting contact information: __________________________________
       If there is a way to report vulnerabilities privately and securely,
       provide a link to the instructions here: ________________________
-- [ ] VM.02: The Project must publish information about discovered
+- [ ] VM.02: The Project shall publish information about discovered
       vulnerabilities within a reasonable period of time, including mitigation
       instructions if available.  Check this box to confirm that there is such
       a policy in place.
