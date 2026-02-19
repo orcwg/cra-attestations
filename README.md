@@ -1,11 +1,19 @@
 ## Overview
 
 This Project's purpose is to explore the topic of, and eventually publish
-guidance regarding, voluntary security attestations for open source projects per Article 25 of the Cyber Resilience Act. 
+guidance regarding, voluntary security attestations for open source projects per
+Article 25 of the Cyber Resilience Act. 
 
-These attestations can help support the maintenance and security of open source projects in exchange for lowering the compliance burdens of manufacturers which use those projects in commercial products on the European market.
+These attestations can help support the maintenance and security of open source
+projects in exchange for lowering the compliance burdens of manufacturers which
+use those projects in commercial products on the European market.
 
 Our current goal is to create a mature proposal by Q2 of 2026.
+
+For more details, see:
+* [The project overview](./overview.md)
+* [Minutes of past meetings](./minutes/README.md)
+* Current [Draft of a two-tier approach](./proposals/gen-two-tier-approach.md)
 
 ## Article 25 (quote for reference)
 
@@ -25,21 +33,18 @@ Our current goal is to create a mature proposal by Q2 of 2026.
 
 * **Project Lead**: Æva Black
 * **Meeting Times**: Every Other Tuesday @ 1530 CET / 1430 UTC
-* **Mailing List**: we're using the ORC mailing list for now
+  * [Jitsi Link](https://www.google.com/url?q=https%3A%2F%2Fmeet.jit.si%2FMainHeadquartersDismissWell)
+  * [Meeting Minutes](https://github.com/orcwg/cra-attestations/tree/main/minutes)
+* **Mailing List**: we're using the [ORC mailing list](https://accounts.eclipse.org/mailing-list/open-regulatory-compliance) for now
 * **Matrix Room**: https://matrix.to/#/#oss-attestations:fosdem.org
-
-To support this Project, we will have (at least) two in-person workshops:
-
-1. During Eclipse's Code & Compliance event, on October 22 & 23
-1. During Europe Open Source Week, either before or during FOSDEM (depending on pending proposals)
 
 ## Participation
 
 Participation in the CRA Attestation Project is not limited to Eclipse Foundation
-members. Anyone is welcome to join the meetings, mailing list, Matrix room, or the Eclipse ORC Slack instance.
+members. Anyone is welcome to join the bi-weekly meetings, post on the mailing list, or chat with us in the Matrix room.
 
-Maintainers of open source projects which are, could be, or are contemplating
-becoming, recognized as Stewards are encouraged to participate.
+All maintainers of open source projects which are, could be, or are contemplating
+acting as Stewards are encouraged to participate.
 
 ## Meetings and the Mailing List
 
