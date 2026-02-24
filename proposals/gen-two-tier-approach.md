@@ -17,14 +17,6 @@ contributors.**
 
 ## Editor's Notes
 
-- We have adopted "VSA" as an acronym for "voluntary security attestation"
-  to provide disambiguation from other technical meanings of "attestation"
-  commonplace in our industry today (e.g., Remote Attestation, Hardware
-  based Attestations, and RSAA-compliance Attestations in U.S. Federal
-  procurement).
-
-- _**TODO:**_ remove "VSA" acronym usage, relegating the disambiguation to
-  an annex, and replace the acronym with an approachable term.
 - _**TODO:**_ complete various TODO's throughout this draft.
 - _**TODO:**_ add citations to explanatory and supportive information (guides, FAQs, etc) in an appendix, and link throughout this proposal.
 
@@ -32,11 +24,11 @@ contributors.**
 
 ## Context
 
-1. VSAs primarily benefit Manufacturers by reducing the compliance burden when
+1. voluntary security attestation primarily benefit Manufacturers by reducing the compliance burden when
    integrating third-party FOSS projects into commercial products, aligning with
    CRA Article 13 and Annex I requirements for due diligence in third-party
    component integration.
-1. VSAs may benefit open source maintainers _IF_ they incentivize sustained and
+1. voluntary security attestation may benefit open source maintainers _IF_ they incentivize sustained and
    ongoing support (financial or otherwise) for FOSS projects from manufacturers
    who depend on them, without jeopardizing the non-profit nature of open source
    foundations or stewards or requiring individual open source maintainers to
@@ -53,18 +45,18 @@ contributors.**
    this diversity, based on feedback gathered before and during the October 2025
    Code & Compliance event, suggests that there is a natural grouping into two
    tiers: projects that have significant institutional support, and projects
-   that do not. Therefore, we propose a two-tier approach to VSAs to meet the
-   needs of all projects that might wish to issue VSAs.
-1. Light-weight VSAs will be designed based on the reasonably foreseeable
-   capabilities of the maintainers of open source projects that do not have
-   significant commercial support, or those projects which are unlikely to
-   require extensive conformity assessments or cryptographic analysis for
-   downstream integration.
-1. Heavy-weight VSAs will be designed based on the reasonably foreseeable
-   capabilities of the maintainers of open source projects that benefit from
-   significant commercial support, or those projects which are likely to require
-   extensive conformity assessments (e.g. due to their functional equivalence to
-   commercial products).
+   that do not. Therefore, we propose a two-tier approach to voluntary security attestations to meet the
+   needs of all projects that might wish to issue voluntary security attestations.
+1. Light-weight voluntary security attestations will be designed based on the
+   reasonably foreseeable capabilities of the maintainers of open source
+   projects that do not have significant commercial support, or those projects
+   which are unlikely to require extensive conformity assessments or
+   cryptographic analysis for downstream integration.
+1. Heavy-weight voluntary security attestations will be designed based on the
+   reasonably foreseeable capabilities of the maintainers of open source
+   projects that benefit from significant commercial support, or those projects
+   which are likely to require extensive conformity assessments (e.g. due to
+   their functional equivalence to commercial products).
 1. This two-tier structure supports both the needs of manufacturers and the
    capabilities of maintainers of open source projects by aligning attestation
    effort with project complexity and available support. 
@@ -94,9 +86,10 @@ contributors.**
 1. Some FOSS projects, which have a steward and are intended for commercial
    use, would be unduly burdened by the application of a full conformity
    assessment.
-1. Some FOSS projects could have a steward who would not issue VSAs now or in
-   the future for that project. Therefore, any proposal must account for VSAs
-   issued by projects who are in this situation.
+1. Some FOSS projects could have a steward who would not issue voluntary
+   security attestations now or in the future for that project. Therefore, any
+   proposal must account for voluntary security attestations issued by projects
+   who are in this situation.
 
 # Considerations
 
@@ -104,21 +97,24 @@ contributors.**
 
 1. Considering the authoritative nature of a maintainer's role in the secure
    development of an open source projects, maintainers are the most reliable
-   parties capable of issuing VSAs.
+   parties capable of issuing voluntary security attestations.
 
 ## Regarding Non-Stewarded Projects
 
 1. Considering that a steward who both fulfills the Article 24 obligations and
-   issues VSAs will provide market actors -- CSIRTs, MSAs, and Manufacturers,
-   and cybersecurity researchers -- with a trustworthy coordination point for a
-   scoped set of open source projects;
+   issues voluntary security attestations will provide market actors -- CSIRTs,
+   MSAs, and Manufacturers, and cybersecurity researchers -- with a trustworthy
+   coordination point for a scoped set of open source projects;
 1. Considering that many open source projects do not currently have this support
    from a _legal entity_ that could be deemed either its manufacturer or
    steward;
 1. Considering that such projects none the less provide significant economic and
    societal value;
-1. Considering that VSAs could enable new business models and revenue
-   streams while protecting the non-manufacturer status of non-stewarded projects, building on the strengths of open source, and providing market actors -- CSIRTs, MSAs, and Manufacturers, and cybersecurity researchers -- with a known coordination point for open source projects.
+1. Considering that voluntary security attestations could enable new business
+   models and revenue streams while protecting the non-manufacturer status of
+   non-stewarded projects, building on the strengths of open source, and
+   providing market actors -- CSIRTs, MSAs, and Manufacturers, and cybersecurity
+   researchers -- with a known coordination point for open source projects.
 
 Therefore, we recommend defining new mechanisms that:
 1. Enable currently-non-stewarded projects to become stewarded in a reasonable
@@ -157,17 +153,19 @@ attestation, will be produced.
    projects.
 
 In these cases, it is beneficial for the necessary project information to be
-made publicly available such that third parties can generate VSAs through
-machine automatable means, thereby minimizing any burden on the open source
-maintainers.
+made publicly available such that third parties can generate voluntary security
+attestations through machine automatable means, thereby minimizing any burden on
+the open source maintainers.
 
 ## Attestations for Dependencies
 
 1. Given that it is common for projects to incorporate dependencies into
-   distributed binaries, it may be valuable to include VSAs for those
-   dependencies. Alternatively, a comprehensive SBOM may enable manufacturers to
-   acquire the relevant VSAs for dependencies.
-1. If a Steward is issuing VSAs, it should only do so for dependencies that fall
+   distributed binaries, it may be valuable to include voluntary security
+   attestations for those dependencies. Alternatively, a comprehensive SBOM may
+   enable manufacturers to acquire the relevant voluntary security attestations
+   for dependencies.
+1. If a Steward is issuing voluntary security attestations, it should only do so
+   for dependencies that fall
    within their scope of support and for which they have obtained the necessary
    cooperation and commitment from the respective maintainers.
 1. Project maintainers must be willing and capable of adhering to documented
@@ -199,7 +197,8 @@ maintainers.
 
 ## Recommendations for Maintainers of Projects Used in Products
 
-1. Maintainers may wish to produce VSAs for projects they are responsible for.
+1. Maintainers may wish to produce voluntary security attestations for projects
+   they are responsible for.
 1. Maintainers may wish to explore options to associate with a steward or
    a fiscal host that can act as an intermediary.
 1. Maintainers may wish to make publicly available the necessary artifacts to
@@ -208,30 +207,33 @@ maintainers.
 ## Recommendations for Stewards
 
 1. Due to the obligations of stewards described in CRA Article 24, and their
-   relationship to specific open source projects, stewards should produce VSAs
-   for projects to which they offer "sustained and ongoing support."
-1. Stewards should support tasks associated with producing VSAs that maintainers
-   do not wish to perform.
-1. Stewards who produce VSAs for second-party projects (i.e., those their
-   projects depend on) should indicate the nature of the relaionship.
+   relationship to specific open source projects, stewards should produce
+   voluntary security attestations for projects to which they offer "sustained
+   and ongoing support."
+1. Stewards should support tasks associated with producing voluntary security
+   attestations that maintainers do not wish to perform.
+1. Stewards who produce voluntary security attestations for second-party
+   projects (i.e., those their projects depend on) should indicate the nature of
+   the relaionship.
 
 ## Recommendations for both Maintainers and Stewards
 
-1. Maintainers and Stewards may produce VSAs for their project's dependencies;
-   if done, they should clearly document the relationship between the issuer of
-   the VSA and the subject of the VSA.
-1. Maintainers and Stewards should not produce VSAs for projects that are not
-   associated with their activities.
-1. Maintainers and Stewards may publish VSAs in multiple ways, including but not
-   limited to:
+1. Maintainers and Stewards may produce voluntary security attestations for
+   their project's dependencies; if done, they should clearly document the
+   relationship between the issuer of the VSA and the subject of the VSA.
+1. Maintainers and Stewards should not produce voluntary security attestations
+   for projects that are not associated with their activities.
+1. Maintainers and Stewards may publish voluntary security attestations in
+   multiple ways, including but not limited to:
    1. By placing a `COMPLIANCE.MD` file in the project's root directory (i.e.,
       alongside the `LICENSE.MD` file)
    1. By providing a digitally-signed file publicly, to limited groups (e.g.,
       based on membership), or uniquely to individual entities.
    1. By uploading an appropriate file to a public or private attestation
       repository of appropriate scope, if such exists.
-   1. By writing a relevant entry in non-repudiable public digital records,
-      such as in a [Rekor](https://github.com/sigstore/rekor) or [SCITT](https://datatracker.ietf.org/wg/scitt/about/) log entry.
+   1. By writing a relevant entry in non-repudiable public digital records, such
+      as in a [Rekor](https://github.com/sigstore/rekor) or
+      [SCITT](https://datatracker.ietf.org/wg/scitt/about/) log entry.
 
 ## Recommendations for Manufacturers
 
@@ -244,7 +246,7 @@ maintainers.
    such documentation, either directly or through a stewarding organization (if
    present).
    
-# Light Weight VSAs
+# Light Weight voluntary security attestations
 
 ## Summary
 
@@ -373,7 +375,7 @@ Mapping table between CRA Requirements and the attached "Light Weight Template".
 | Annex VII.7          | _not applicable_                                       | copy of EU declaration of conformity     |
 | Annex VII.8          | LE.02, QA.01                                           | SBOM available upon request              |
 
-# Heavy Weight VSAs
+# Heavy Weight voluntary security attestations
 
 ## Summary
 
@@ -388,10 +390,10 @@ Whereas the performance of, and authoring documentation regarding, a
 cybersecurity risk assessment is most appropriately done by the community of
 maintainers and developers of an open source project;
 
-It is therefore recommended that heavy-weight VSAs demonstrate conformity to the
-essential requirements of Annex I Part I, and where applicable, document
-conformity to one or more relevant Annex III Class I or Class II products and
-the relevant harmonized standards.
+It is therefore recommended that heavy-weight voluntary security attestations
+demonstrate conformity to the essential requirements of Annex I Part I, and
+where applicable, document conformity to one or more relevant Annex III Class I
+or Class II products and the relevant harmonized standards.
 
 ## Status 
 
