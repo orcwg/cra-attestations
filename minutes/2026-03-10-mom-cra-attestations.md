@@ -3,7 +3,7 @@
 | Min | Agenda Topics | Moderator |
 | ----- | ----- | ----- |
 | 0 | Welcome & approve agenda |  |
-| 5 | Approval of the minutes from the previous meeting …. [2026-02-24-mom-cra-attestations](./2026-02-24-mom-cra-attestations.md)  |  |
+| 5 | Approval of the minutes from the previous meeting [2026-02-24-mom-cra-attestations](./2026-02-24-mom-cra-attestations.md)  |  |
 | 10 | Discuss Survey Result Status |  |
 | 15 | Joint Statement in Support |  |
 | 20 |  |  |
@@ -44,7 +44,7 @@
 
 ### Joint Statement?
 
-- [https://docs.google.com/document/d/1KOO0ZkknEE96w4iscYZh0kUdUJhE4g167KTqam3Xtqc/edit?usp=sharing](https://docs.google.com/document/d/1KOO0ZkknEE96w4iscYZh0kUdUJhE4g167KTqam3Xtqc/edit?usp=sharing)   
+- [Draft Joint Statement](https://docs.google.com/document/d/1KOO0ZkknEE96w4iscYZh0kUdUJhE4g167KTqam3Xtqc/edit?usp=sharing)   
 - Will be brought before ORC steering committee early next week. Could have additional signatories. If approved & supported, then would be posted publicly via social media, maybe press release, and sent to EC directly.  
 - Notes  
   - Mathias \- asks if scope is fixed or flexible at this point  
