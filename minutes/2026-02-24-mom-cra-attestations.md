@@ -5,7 +5,7 @@
 | 0 | Welcome & approve agenda |  |
 | 5 | Approval of the minutes from the previous meeting [here](https://github.com/orcwg/cra-attestations/pull/21) |  |
 | 10 | CRA Expert Group meeting prep  |  |
-| 15 | Update to README & overview[https://github.com/orcwg/cra-attestations](https://github.com/orcwg/cra-attestations)  |  |
+| 15 | Update to [README & overview](https://github.com/orcwg/cra-attestations)  |  |
 | 20 |  |  |
 | 25 | [Tobie’s Paper](https://docs.google.com/document/d/1OvETnBXGYSpzlSYGG18eDhgLwP50WOD4LnGwPtp19Ak/edit?tab=t.0) \- presentation and discussion |  |
 | 30 |  |  |
@@ -47,8 +47,8 @@
         - Is a Steward an Economic Operator? Some conflicting guidance according to different regulations. This is important since, if Steward \= EO, then things that CRA does not address, but other regs DO address may apply. It’s better to get this clarified now, versus in 5 years when things are more consolidated than they are now  
         - This group is seeking clarity on the topic. 
 
-- Tobie’s paper \- Security Attestations Under the EU CRA ([https://docs.google.com/document/d/1OvETnBXGYSpzlSYGG18eDhgLwP50WOD4LnGwPtp19Ak/edit?tab=t.0](https://docs.google.com/document/d/1OvETnBXGYSpzlSYGG18eDhgLwP50WOD4LnGwPtp19Ak/edit?tab=t.0))   
-  - Paper based on Tobie’s presentation at FOSDEM ([https://fosdem.org/2026/schedule/event/AATKG8-cra-security-attestations-in-practice/](https://fosdem.org/2026/schedule/event/AATKG8-cra-security-attestations-in-practice/))   
+- Tobie’s paper \- [Security Attestations Under the EU CRA](https://docs.google.com/document/d/1OvETnBXGYSpzlSYGG18eDhgLwP50WOD4LnGwPtp19Ak/edit?tab=t.0)
+  - Paper based on [Tobie’s presentation at FOSDEM](https://fosdem.org/2026/schedule/event/AATKG8-cra-security-attestations-in-practice/)
   - Based on need for Manus to do due diligence on one end, and the desire of OSS community (and by EU) to be able to rely on secure open source software.  
   - What are economically reasonable options to shift security left to Maintainers, where there is expertise and efficiencies, and have that work be funded by Manus.  
   - Manus have to demonstrate that they’ve done Due Diligence. And they need a credible way to maintain the security of their PDEs regardless of what happens upstream  
@@ -70,7 +70,7 @@
     - Private security info (low monetization) \- maybe useful for large stewards  
       - Volume of security incidents/PRs/  
       - Question about the legality of sharing embargoed info about in-process CVE remediation in exchange for membership fees or such  
-      -   
+        
     - Manus do not have to use Attestations to meet their requirements, and public signals are public, so that doesn’t leave much for Maintainers to provide that Manus will pay for. So, the real value if long-term maintenance of OSS. Attestations should be the mechanism to enable this, while being protective of Maintainers and avoiding turning liability to them  
     - Paper proposes Maintainer Pods as a potential solution that are effectively Stewards, but from the point of the view of the law are not.  
   - Alistair \- some projects should get marked as “Depricated” could be a large percent of all OSS packages, which would then reduce the size of the population of “viable” projects, so perhaps the burden for the remaining ones to become stewarded would be lower   
