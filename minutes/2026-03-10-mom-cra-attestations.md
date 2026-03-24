@@ -1,7 +1,7 @@
 ---
 Task force: CRA Attestations
 Document type: Minutes
-Status:  ⚠️ Draft
+Status:  ✅ Approved
 Date: 2026-03-10
 ---
 
@@ -33,6 +33,7 @@ Date: 2026-03-10
 - Sebastian Tiemann (Open Elements)  
 - Francisco Picolini (OpenNebula Systems)  
 - Anne Dickison (FreeBSD Foundation)
+- Gregor Bransky (Innovationsverbund Öffentliche Gesundheit e.V.)
 
 ## Notes
 
