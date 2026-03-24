@@ -1,9 +1,16 @@
+---
+Task force: CRA Attestations
+Document type: Minutes
+Status:  ⚠️ Draft
+Date: 2026-03-10
+---
+
 ## Agenda
 
 | Min | Agenda Topics | Moderator |
 | ----- | ----- | ----- |
 | 0 | Welcome & approve agenda |  |
-| 5 | Approval of the minutes from the previous meeting …. [2026-02-24-mom-cra-attestations](https://docs.google.com/document/d/16v7sB-RNFxU0gq2b7PXp1tmoAlQ7PY5x5IXb7EAF1sE/edit?tab=t.0#heading=h.6tr3479a7rzj)  |  |
+| 5 | Approval of the minutes from the previous meeting  |  |
 | 10 | Discuss Survey Result Status |  |
 | 15 | Joint Statement in Support |  |
 | 20 |  |  |
