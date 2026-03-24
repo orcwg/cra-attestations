@@ -1,3 +1,10 @@
+---
+Task force: CRA Attestations
+Document type: Minutes
+Status:  ✅ Approved
+Date: 2026-02-24
+---
+
 ## Agenda
 
 | Min | Agenda Topics | Moderator |
