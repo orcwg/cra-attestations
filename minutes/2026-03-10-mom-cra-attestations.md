@@ -10,7 +10,7 @@ Date: 2026-03-10
 | Min | Agenda Topics | Moderator |
 | ----- | ----- | ----- |
 | 0 | Welcome & approve agenda |  |
-| 5 | Approval of the minutes from the previous meeting  |  |
+| 5 | Approval of the minutes from the previous meeting|  |
 | 10 | Discuss Survey Result Status |  |
 | 15 | Joint Statement in Support |  |
 | 20 |  |  |
