@@ -36,6 +36,7 @@ Date: 2026-04-07
 - Timo Perälä (Nokia)  
 - Juan Rico (Eclipse Foundation)  
 - Seth Larsin (Python Software Foundation)
+- August Bournique
 
 ## Notes
 
