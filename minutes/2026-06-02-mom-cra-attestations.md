@@ -37,6 +37,7 @@ Date: 2026-06-02
 - Arman Bilge (Typelevel Foundation)  
 - Timo Perälä (Nokia)  
 - Salve J. Nilsenn (CPANSec)
+- Jan Zizka (Nokia)
 
 ## Notes
 
