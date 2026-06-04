@@ -34,7 +34,7 @@ Date: 2026-06-02
 - Mathias Schindler (GitHub)  
 - Pierre Pronchery (FreeBSD Foundation)  
 - Christian Pfaab  
-- Arman BIlge (Typelevel Foundation)  
+- Arman Bilge (Typelevel Foundation)  
 - Timo Perälä (Nokia)  
 - Salve J. Nilsenn (CPANSec)
 
