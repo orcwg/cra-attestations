@@ -41,7 +41,7 @@ Governance
       quality standard for contributions. Check this box to confirm.
 - [ ] GV.03: The Project must include documentation about its usage and
       intended purpose or functionality.
-      Documentaiton Link:     __________________________________________
+      Documentation Link:     __________________________________________
 
 Licensing
 - [ ] LE.01: All Project components, including binaries and documentation, 
