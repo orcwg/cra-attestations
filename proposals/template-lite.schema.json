@@ -1,0 +1,314 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/orcwg/cra-attestations/main/proposals/template-lite.schema.json",
+  "title": "Lightweight Voluntary Security Attestation",
+  "description": "A machine-readable form of the checklist in proposals/template-lite.md, revision 0.1. One object per attestation. Every checklist item keeps the identifier the checklist gives it, so a form filled on paper and a form filled as JSON carry the same row names. The three-valued status and the per-item evidence class are the two places this file says more than a tick box can. See the evidence-class definitions under $defs.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["template", "template_revision", "issuer", "contact", "projects", "controls"],
+  "properties": {
+    "template": {
+      "description": "Which template this attestation answers.",
+      "const": "template-lite"
+    },
+    "template_revision": {
+      "description": "The revision of proposals/template-lite.md answered, taken from that document's Edit History table.",
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+$"
+    },
+    "issued_on": {
+      "description": "The date the issuing entity signed off on this attestation.",
+      "type": "string",
+      "format": "date"
+    },
+    "issuer": {
+      "description": "AU.01. The software producer issuing the attestation.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "registered_address", "website"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "registered_address": { "type": "string", "minLength": 1 },
+        "website": { "type": "string", "format": "uri" }
+      }
+    },
+    "contact": {
+      "description": "AU.02. The person making the statement, and their role in the organization.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary_contact", "organizational_role"],
+      "properties": {
+        "primary_contact": { "type": "string", "minLength": 1 },
+        "organizational_role": { "type": "string", "minLength": 1 }
+      }
+    },
+    "projects": {
+      "description": "AU.03. Every project the attestation applies to. The checklist asks for all projects and gives one slot, so this is a list.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "url", "valid_for_versions", "valid_for_dates"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "url": { "type": "string", "format": "uri" },
+          "valid_for_versions": {
+            "description": "The versions this attestation covers.",
+            "type": "string",
+            "minLength": 1
+          },
+          "valid_for_dates": { "type": "string", "minLength": 1 },
+          "artifact_digests": {
+            "description": "Optional, and not asked for by revision 0.1. QA.01 already asks for checksums of dependencies; an issuer who publishes digests of its own released artefacts lets a reader tell which artefact the attestation was about. Present so that an issuer who has them has somewhere to put them.",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["algorithm", "value"],
+              "properties": {
+                "algorithm": { "enum": ["sha256", "sha384", "sha512"] },
+                "value": { "type": "string", "pattern": "^[0-9a-f]+$" },
+                "describes": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "controls": {
+      "description": "The checklist items after the Authorship block, keyed by their checklist identifier. Every item is required to appear, because an absent item and an item answered not_met are different statements and a form that permits omission cannot tell them apart.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "GV.01", "GV.02", "GV.03",
+        "LE.01", "LE.02",
+        "QA.01", "QA.02", "QA.03", "QA.04", "QA.05", "QA.06", "QA.07",
+        "BR.01", "BR.02", "BR.03", "BR.04",
+        "VM.01", "VM.02",
+        "EL.01"
+      ],
+      "properties": {
+        "GV.01": { "$ref": "#/$defs/evidenced", "title": "The Project must include a contribution guideline." },
+        "GV.02": { "$ref": "#/$defs/confirmed", "title": "The contribution guideline should set a quality standard for contributions." },
+        "GV.03": { "$ref": "#/$defs/evidenced", "title": "The Project must include documentation about its usage and intended purpose or functionality." },
+        "LE.01": { "$ref": "#/$defs/evidenced", "title": "All Project components, including binaries and documentation, must be publicly available under an open source license." },
+        "LE.02": { "$ref": "#/$defs/confirmedOrExplained", "title": "The Project's dependencies, including requirements for reproducing distributed binaries, should be available under an open source license." },
+        "QA.01": { "$ref": "#/$defs/evidencedWithChecksums", "title": "The Project must document all direct third-party dependencies, and the list should include checksums where applicable." },
+        "QA.02": { "$ref": "#/$defs/evidenced", "title": "The Project's source code, including change history, must be publicly available." },
+        "QA.03": { "$ref": "#/$defs/evidenced", "title": "The Project must include documentation describing how to file a vulnerability report." },
+        "QA.04": { "$ref": "#/$defs/evidenced", "title": "The Project must include repeatable test procedures." },
+        "QA.05": { "$ref": "#/$defs/conditional", "title": "If the Project relies on code written in non-memory-safe languages, it must include mitigations for memory safety vulnerabilities." },
+        "QA.06": { "$ref": "#/$defs/confirmed", "title": "Projects should have more than one active contributor." },
+        "QA.07": { "$ref": "#/$defs/conditional", "title": "Projects with more than one active contributor should require that every change is reviewed by at least one human non-author." },
+        "BR.01": { "$ref": "#/$defs/evidenced", "title": "The Project must document how to build it from source code." },
+        "BR.02": { "$ref": "#/$defs/confirmedAndEvidenced", "title": "All Project releases intended for use must be assigned unique and monotonically increasing version identifiers." },
+        "BR.03": { "$ref": "#/$defs/confirmedAndEvidenced", "title": "All released assets must be distributed so that integrity is maintained or at least verifiable, and the means to verify must be documented." },
+        "BR.04": { "$ref": "#/$defs/confirmedAndEvidenced", "title": "All releases must include a descriptive log of functional and security changes." },
+        "VM.01": { "$ref": "#/$defs/securityContact", "title": "The Project must indicate at least one security contact for reporting vulnerabilities." },
+        "VM.02": { "$ref": "#/$defs/confirmed", "title": "The Project must publish information about discovered vulnerabilities within a reasonable period of time, including mitigation instructions where available." },
+        "EL.01": { "$ref": "#/$defs/confirmedWithOptionalEvidence", "title": "Discontinuation of support for the Project, parts of it, or specific versions of it should be communicated adequately." }
+      }
+    }
+  },
+  "$defs": {
+    "status": {
+      "description": "Three values, not two. A tick box has two states and the checklist gives an unticked box three meanings: answered no, does not apply, and not reached. QA.05 and QA.07 are conditional on their face, and LE.02 already asks for a reason when the answer is no, so revision 0.1 needs the third value in at least three places.",
+      "enum": ["met", "not_met", "not_applicable"]
+    },
+    "evidence_url": {
+      "description": "A location a reader consults without asking the issuer for anything.",
+      "type": "string",
+      "format": "uri"
+    },
+    "note": {
+      "description": "Free text the issuer wants a reader to have. Never a substitute for evidence_url on an item whose evidence class requires one.",
+      "type": "string",
+      "minLength": 1
+    },
+    "evidenced": {
+      "description": "Evidence class: evidenced. The checklist asks for a link on these items, so met requires one.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": { "$ref": "#/$defs/status" },
+        "evidence_url": { "$ref": "#/$defs/evidence_url" },
+        "note": { "$ref": "#/$defs/note" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "met" } }, "required": ["status"] },
+          "then": { "required": ["status", "evidence_url"] }
+        },
+        {
+          "if": { "properties": { "status": { "const": "not_applicable" } }, "required": ["status"] },
+          "then": { "required": ["status", "note"] }
+        }
+      ]
+    },
+    "evidencedWithChecksums": {
+      "description": "Evidence class: evidenced, with the one nested modality revision 0.1 contains. QA.01 carries a MUST about the dependency list and a SHOULD about checksums under a single tick box, so a ticked QA.01 says nothing about whether the checksums are there. checksums_present records the inner answer where a reader can find it.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": { "$ref": "#/$defs/status" },
+        "evidence_url": { "$ref": "#/$defs/evidence_url" },
+        "checksums_present": {
+          "description": "Whether the dependency list carries cryptographically unique identifiers. This is the checklist's SHOULD, answered separately from its MUST.",
+          "type": "boolean"
+        },
+        "note": { "$ref": "#/$defs/note" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "met" } }, "required": ["status"] },
+          "then": { "required": ["status", "evidence_url", "checksums_present"] }
+        },
+        {
+          "if": { "properties": { "status": { "const": "not_applicable" } }, "required": ["status"] },
+          "then": { "required": ["status", "note"] }
+        }
+      ]
+    },
+    "confirmed": {
+      "description": "Evidence class: confirmed. The checklist asks the issuer to tick a box and names no artefact, so the item rests on the issuer's own word, and a reader can see that from the shape rather than having to compare the form against the checklist. One item in this class, VM.02, is a MUST.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": { "$ref": "#/$defs/status" },
+        "evidence_url": {
+          "description": "Optional here. The checklist asks for no link on this item, and an issuer who has one is not prevented from giving it.",
+          "$ref": "#/$defs/evidence_url"
+        },
+        "note": { "$ref": "#/$defs/note" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "not_applicable" } }, "required": ["status"] },
+          "then": { "required": ["status", "note"] }
+        }
+      ]
+    },
+    "confirmedAndEvidenced": {
+      "description": "Evidence class: confirmed and evidenced. The checklist asks for both a tick and a link on these items, so met requires the link.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": { "$ref": "#/$defs/status" },
+        "evidence_url": { "$ref": "#/$defs/evidence_url" },
+        "note": { "$ref": "#/$defs/note" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "met" } }, "required": ["status"] },
+          "then": { "required": ["status", "evidence_url"] }
+        },
+        {
+          "if": { "properties": { "status": { "const": "not_applicable" } }, "required": ["status"] },
+          "then": { "required": ["status", "note"] }
+        }
+      ]
+    },
+    "confirmedWithOptionalEvidence": {
+      "description": "Evidence class: confirmed, link where one exists. EL.01 asks for a tick to say the policy exists and for a link only if the policy is publicly documented, so the link is optional and the schema does not invent a requirement the checklist does not make.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": { "$ref": "#/$defs/status" },
+        "evidence_url": { "$ref": "#/$defs/evidence_url" },
+        "note": { "$ref": "#/$defs/note" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "not_applicable" } }, "required": ["status"] },
+          "then": { "required": ["status", "note"] }
+        }
+      ]
+    },
+    "confirmedOrExplained": {
+      "description": "Evidence class: confirmed or explained. LE.02 is the one item in revision 0.1 that asks for a reason when the answer is no, and it is the pattern the two conditional items lack.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": { "$ref": "#/$defs/status" },
+        "explanation": {
+          "description": "Required when status is not_met, in the checklist's own words: if this is not true, please explain.",
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_url": { "$ref": "#/$defs/evidence_url" },
+        "note": { "$ref": "#/$defs/note" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "not_met" } }, "required": ["status"] },
+          "then": { "required": ["status", "explanation"] }
+        },
+        {
+          "if": { "properties": { "status": { "const": "not_applicable" } }, "required": ["status"] },
+          "then": { "required": ["status", "note"] }
+        }
+      ]
+    },
+    "conditional": {
+      "description": "Evidence class: conditional. QA.05 and QA.07 each open with a condition, and revision 0.1 records the condition nowhere, so an unticked box does not separate does not apply from applies and is not done. The applies field records the condition, and the status is then readable.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["applies", "status"],
+      "properties": {
+        "applies": {
+          "description": "Whether the item's opening condition holds for this project. For QA.05, that the project relies on code written in non-memory-safe languages. For QA.07, that the project has more than one active contributor.",
+          "type": "boolean"
+        },
+        "status": { "$ref": "#/$defs/status" },
+        "evidence_url": { "$ref": "#/$defs/evidence_url" },
+        "note": { "$ref": "#/$defs/note" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "applies": { "const": false } }, "required": ["applies"] },
+          "then": { "properties": { "status": { "const": "not_applicable" } } }
+        },
+        {
+          "if": { "properties": { "applies": { "const": true } }, "required": ["applies"] },
+          "then": { "properties": { "status": { "enum": ["met", "not_met"] } } }
+        }
+      ]
+    },
+    "securityContact": {
+      "description": "Evidence class: contact. VM.01 asks for contact information rather than a link, and asks for a link to private reporting instructions only where such a route exists.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": { "$ref": "#/$defs/status" },
+        "reporting_contact": {
+          "description": "How a reporter reaches the project: an address, a form, or the location of a security policy.",
+          "type": "string",
+          "minLength": 1
+        },
+        "private_reporting_url": {
+          "description": "Instructions for reporting privately and securely, where such a route exists.",
+          "$ref": "#/$defs/evidence_url"
+        },
+        "note": { "$ref": "#/$defs/note" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "met" } }, "required": ["status"] },
+          "then": { "required": ["status", "reporting_contact"] }
+        },
+        {
+          "if": { "properties": { "status": { "const": "not_applicable" } }, "required": ["status"] },
+          "then": { "required": ["status", "note"] }
+        }
+      ]
+    }
+  }
+}

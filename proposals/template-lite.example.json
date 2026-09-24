@@ -1,0 +1,66 @@
+{
+  "template": "template-lite",
+  "template_revision": "0.1",
+  "issued_on": "2026-09-22",
+  "issuer": {
+    "name": "Example Issuing Entity",
+    "registered_address": "1 Example Street, 1000 Example City, Example Member State",
+    "website": "https://example.org/"
+  },
+  "contact": {
+    "primary_contact": "A. Person",
+    "organizational_role": "Release engineering lead"
+  },
+  "projects": [
+    {
+      "name": "example-library",
+      "url": "https://example.org/example-library",
+      "valid_for_versions": "3.2.1",
+      "valid_for_dates": "2026-09-22 to 2027-09-21",
+      "artifact_digests": [
+        {
+          "algorithm": "sha256",
+          "value": "0000000000000000000000000000000000000000000000000000000000000000",
+          "describes": "example-library-3.2.1.tar.gz"
+        }
+      ]
+    }
+  ],
+  "controls": {
+    "GV.01": { "status": "met", "evidence_url": "https://example.org/example-library/CONTRIBUTING.md" },
+    "GV.02": { "status": "met" },
+    "GV.03": { "status": "met", "evidence_url": "https://example.org/example-library/docs/" },
+    "LE.01": { "status": "met", "evidence_url": "https://example.org/example-library/LICENSE" },
+    "LE.02": {
+      "status": "not_met",
+      "explanation": "One build-time dependency of the release toolchain is distributed under a proprietary licence. It is not redistributed with the binaries and is named in the build documentation."
+    },
+    "QA.01": {
+      "status": "met",
+      "evidence_url": "https://example.org/example-library/releases/3.2.1/sbom.cdx.json",
+      "checksums_present": true
+    },
+    "QA.02": { "status": "met", "evidence_url": "https://example.org/example-library/source" },
+    "QA.03": { "status": "met", "evidence_url": "https://example.org/example-library/SECURITY.md" },
+    "QA.04": { "status": "met", "evidence_url": "https://example.org/example-library/docs/testing.md" },
+    "QA.05": {
+      "applies": true,
+      "status": "met",
+      "evidence_url": "https://example.org/example-library/docs/memory-safety.md",
+      "note": "The parser is written in C. Contribution guidelines require a fuzz target for each new input path, and the suite runs on every change."
+    },
+    "QA.06": { "status": "met" },
+    "QA.07": { "applies": true, "status": "met", "evidence_url": "https://example.org/example-library/docs/review-policy.md" },
+    "BR.01": { "status": "met", "evidence_url": "https://example.org/example-library/docs/building.md" },
+    "BR.02": { "status": "met", "evidence_url": "https://example.org/example-library/releases" },
+    "BR.03": { "status": "met", "evidence_url": "https://example.org/example-library/docs/verifying-releases.md" },
+    "BR.04": { "status": "met", "evidence_url": "https://example.org/example-library/CHANGELOG.md" },
+    "VM.01": {
+      "status": "met",
+      "reporting_contact": "security@example.org",
+      "private_reporting_url": "https://example.org/example-library/SECURITY.md#reporting-privately"
+    },
+    "VM.02": { "status": "met" },
+    "EL.01": { "status": "met", "evidence_url": "https://example.org/example-library/docs/support-lifecycle.md" }
+  }
+}
