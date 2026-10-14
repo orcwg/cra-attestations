@@ -1,4 +1,4 @@
-# Contemplating Mechanisms for Article 25 in Support of Open Source Stewards
+# Contemplating Mechanisms for Article 25 in Support of Open Source Software Stewards
 
 ## Introduction
 
@@ -8,13 +8,13 @@ as a compliance risk, but as a strategic asset capable of strengthening Europe�
 digital sovereignty, resilience, and innovation capacity. Central to this vision
 is Article 25, which empowers the European Commission to adopt a Delegated Act
 specifying the nature and structure of *voluntary security attestations* for
-free and open source software (FOSS), issued by Open Source Stewards and others,
+free and open source software (FOSS), issued by Open Source Software Stewards and others,
 for the purpose of supporting manufacturers’ due diligence obligations under the
 Act.
 
 Article 25 presents a rare opportunity: to align regulatory intent with
 ecosystem realities. If implemented well, it could transform stewardship from a
-legal question into a funded and trusted role — enabling Open Source Stewards to
+legal question into a funded and trusted role — enabling Open Source Software Stewards to
 deliver on their Article 24 responsibilities (see below) while fostering a more
 resilient, transparent, and secure digital supply chain for all.
 
