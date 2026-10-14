@@ -13,7 +13,7 @@ for the purpose of supporting manufacturers’ due diligence obligations under t
 Act.
 
 Article 25 presents a rare opportunity: to align regulatory intent with
-ecosystem realities. If implemented well, it coulc transform stewardship from a
+ecosystem realities. If implemented well, it could transform stewardship from a
 legal question into a funded and trusted role — enabling Open Source Stewards to
 deliver on their Article 24 responsibilities (see below) while fostering a more
 resilient, transparent, and secure digital supply chain for all.
