@@ -67,7 +67,7 @@ intended for commercial use:
 - some projects are only usable as "components" of more complex systems -- e.g.
   programming languages, rendering libraries, command-line utilities, and so on
   -- and do not meet the definitions of product categories in Annex III or Annex
-  IV. 
+  IV of the CRA. 
 - some projects are functionally equivalent to "products placed on the market".
   These projects may meet the definitions of products defined in Annex III or
   Annex IV, and may be only slightly modified, or not modified at all, by
@@ -105,7 +105,7 @@ for the distribution and verification of the authenticity of attestations should
 be contemplated. This also necessitates a mechanism to resolve disputed
 third-party attestations. 
 
-Additionally, it is necessary to comtemplate potential market-distoring effects, were
+Additionally, it is necessary to comtemplate potential market-distorting effects, were
 manufacturers to be permitted to issue and profit from a mechanism intended to
 support open source software stewards.
 
