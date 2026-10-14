@@ -54,8 +54,9 @@ this project, we have summarized those obligations below --
    incidents and, where necessary, of any risk mitigation and corrective
    measures
 
-_**TODO**_: Add references to FAQ or other articles describing the obligations
-of stewards in more detail.
+References:
+* [ORC Whitepaper: Open Source Software Stewards and the CRA](https://orcwg.org/cra/resources/d3-5-white-paper-on-open-source-software-stewards-and-cra/)
+* [ORC FAQ: Open Source Software Stewards](https://cra.orcwg.org/faq/stewards/)
 
 ## A Two-Tier Attestation Framework
 
