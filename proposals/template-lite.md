@@ -14,7 +14,7 @@ Introduction
 _**TODO: Write introductory verbiage**_
 
 _**Editor's Note: The checklist below is derived from [BSI
-TR-03185-2](https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/TechGuidelines/TR03185/BSI-TR-03185-2.html).**_
+TR-03185 part 2](https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/Technische-Richtlinien/TR-nach-Thema-sortiert/tr03185/tr-03185.html).**_
 
 Template
 ---
