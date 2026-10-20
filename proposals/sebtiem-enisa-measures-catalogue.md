@@ -13,10 +13,9 @@ _**Status of this document**_
 
 ## Editor's Notes
 - _**TODO:**_ verify all CRA references against Annex C of the ENISA Playbook.
-- _**TODO:**_ review the remaining design playbooks (4.1 to 4.12) for further Heavy-Weight measures.
 - _**TODO:**_ agree on a versioning and governance model for the catalogue.
 - _**TODO:**_ review further design playbooks for Heavy-Weight measures.
-Candidates, with indicative CRA references: 4.2 Least privilege and 4.3 Strong identity and authentication architecture (Annex I Part I 2(d)), 4.4 Attack surface minimization (2(j)), 4.5 Defence in depth (2(k)), 4.10 Logging, monitoring and alerting (2(l)), 4.11 Configuration and change management (2(f)). Several of these mainly apply to product-like projects rather than components. Playbook 4.12 (incident response and recovery) may also be relevant to stewards' notification duties under Article 24.
+  Candidates, with indicative CRA references: 4.2 Least privilege and 4.3 Strong identity and authentication architecture (Annex I Part I 2(d)), 4.4 Attack surface minimization (2(j)), 4.5 Defence in depth (2(k)), 4.10 Logging, monitoring and alerting (2(l)), 4.11 Configuration and change management (2(f)). Several of these mainly apply to product-like projects rather than components. Playbook 4.12 (incident response and recovery) may also be relevant to stewards' notification duties under Article 24.
 
 # Introduction
 ## Purpose
@@ -48,7 +47,7 @@ The catalogue keeps the existing tiers and adds an evidence level, so that a cla
 | Evidence level | **E1** self-declared, with link · **E2** machine-verifiable artefact (signature, SBOM, provenance, CI result) · **E3** verified by a party other than the issuer |
 
 E3 means that someone other than the issuer has checked the claim, for example another steward, a security researcher or an auditor. 
-E3 does not imply a conformity assessment by a notified body; whether Heavy-Weight attestations should involve such an assessment remains open in the two-tier proposal. E3 is also distinct from attestation issued by third parties under Article 25, which the overview discusses separately.
+E3 does not imply a conformity assessment by a notified body; whether Heavy-Weight attestations should involve such an assessment remains open in the two-tier proposal. E3 is also distinct from attestations issued by third parties under Article 25, which the overview discusses separately.
 
 This reflects ENISA's own distinction: an attestation is a claim, while verification is a separate step.
 
@@ -80,7 +79,7 @@ Catalogue: ORC WG VSA Measures Catalogue, version 0.1
 - **Baseline:** A `SECURITY.md` (or equivalent) names at least one security contact and explains how to report privately, for example via a forge's private vulnerability reporting or a dedicated e-mail address.
 - **Enhanced:** A documented coordinated vulnerability disclosure process with expected response times; contact data also published in an [OpenSSF Security Insights](https://github.com/ossf/security-insights-spec) file.
 - **Evidence:** E1 link to the document; E2 Security Insights file.
-- **References:** ENISA Playbook 4.13; CRA Annex I Part II (6). The enhanced measure further substantiates CRA Annex I Part II (5).
+- **References:** ENISA Playbook 4.6; CRA Annex I Part II (6). The enhanced measure further substantiates CRA Annex I Part II (5).
 
 ### M-VM.02: Publishing Vulnerability Information
 **Question:** How does the project inform users about fixed vulnerabilities?
@@ -88,7 +87,7 @@ Catalogue: ORC WG VSA Measures Catalogue, version 0.1
 - **Baseline:** Advisories are published within a reasonable period, including mitigation instructions where available, for example as forge security advisories or on a mailing list.
 - **Enhanced:** Machine-readable advisories (CSAF) and affectedness statements (VEX, for example CSAF VEX, CycloneDX VEX or OpenVEX).
 - **Evidence:** E1 link to advisories; E2 CSAF/VEX documents.
-- **References:** ENISA Playbook 4.6; CRA Annex I Part II (2), (4), (5).
+- **References:** ENISA Playbook 4.13; CRA Annex I Part II (2), (4), (5).
 
 ### M-QA.01: Dependencies and SBOM
 **Question:** How does a manufacturer learn what a release contains?
@@ -101,8 +100,8 @@ Catalogue: ORC WG VSA Measures Catalogue, version 0.1
 ### M-BR.03: Release Integrity
 **Question:** How can a user verify that a release has not been tampered with?
 
-- **Baseline:** Checksums are published and the verification procedure is documented, as required by BR.03.
-- **Enhanced:** Release artifacts are signed, for example with Sigstore or OpenPGP, and verification instructions are published.
+- **Baseline:** Release integrity can be verified, for example via published checksums, and the procedure is documented, as required by BR.03.
+- **Enhanced:** Release artefacts are signed, for example with Sigstore or OpenPGP, and verification instructions are published.
 - **Evidence:** E1 link to instructions; E2 signature verifiable by tooling.
 - **References:** ENISA Playbook 4.14; CRA Annex I Part II (7).
 
@@ -146,7 +145,7 @@ proposed as interim content for the Heavy-Weight template.
 **Question:** Which threats has the project considered?
 - **Measure:** A minimal, maintained threat model covering the five to ten most relevant threats, using a method such as STRIDE, revisited on significant change. The gen-two-tier mapping currently marks 13.7 and Annex VII.3 as "not addressed"; this measure would address them.
 - **Evidence:** E1 document in the repository; E2 structured threat model, for example the upcoming CycloneDX TM-BOM
-- **References:** ENISA Playbook 4.1 chapter 2; CRA Annex I Part I (1), Annex VII (3).
+- **References:** ENISA Playbook 4.1 and chapter 2; CRA Annex I Part I (1), Annex VII (3).
 
 ### H-PROV: Build Provenance
 **Question:** Can a manufacturer trace a release back to its source and build?
