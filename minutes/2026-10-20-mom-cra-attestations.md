@@ -1,7 +1,7 @@
 ---
 Task force: CRA Attestations
 Document type: Minutes
-Status:  📝 Draft
+Status: 🗓️ Proposed Agenda
 Date: 2026-10-20
 ---
 
