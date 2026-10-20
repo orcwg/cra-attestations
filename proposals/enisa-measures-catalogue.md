@@ -9,7 +9,7 @@ _**Status of this document**_
 # Revision History
 | Revision | Date       | Summary of Changes                                  |
 | -------- | ---------- | --------------------------------------------------- |
-| 0.1      | 20.10.2026 | Initial proposal by sebtiem to the ORC WG              |
+| 0.1      | 20.10.2026 | Initial proposal by Sebastian Tiemann to the ORC WG              |
 
 ## Editor's Notes
 - _**TODO:**_ verify all CRA references against Annex C of the ENISA Playbook.
