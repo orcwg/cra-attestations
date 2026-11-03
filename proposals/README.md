@@ -18,3 +18,4 @@ As proposals come in, we will coordinate group discussions and compile an analys
 | Your Name | File Name | Version | Status | Description | Comment Summary |
 | --------- | --------- | ------- | ------ | ----------- | --------------- |
 | Æva | gen-two-tier-approach.md | 0.2 | in review by group | Turning Code&Compliance discussions into a generalizable two-tier attestation proposal, based on the latest publication from the BSI | - |
+| Sebastian Tiemann | sebtiem-enisa-measures-catalogue.md | 0.1 | proposed | Measures catalogue based on the ENISA Playbook, complementing the attestation templates | - |
