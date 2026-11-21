@@ -259,6 +259,9 @@ the open source maintainers.
 - The date the attestation was issued.
 - The open source project(s) to which the attestation pertains, identified by
   name, version, and URL.
+  - If the project is distributed as packages, the attestation should list
+    their Package URLs ([PURL](https://tc54.org/purl/)), so that tools can match
+    it to SBOM components that carry a PURL.
   - If the attestation pertains to a specific source code version, then it
     should include the relevant version control identifier, such as a Git
     Commit ID.

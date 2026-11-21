@@ -31,6 +31,7 @@ Authorship
 - [ ] AU.03: List all project(s) to which the attestation applies:
       Project Name:           _________________________________________
       Project URL:            _________________________________________
+      Package URL(s) (PURL):  _________________________________________
       Valid For Version(s):   _________________________________________
       Valid For Date(s):      _________________________________________
 
